@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {
-    RouteContext, History
+    RouteContext
 }
 from 'react-router';
 import {
@@ -10,23 +10,14 @@ import {
 from 'electron';
 import Modal from './Modal';
 import Message from './Message';
-import historyActions from '../actions/historyActions';
 
 export
 default React.createClass({
 
-    mixins: [PureRenderMixin, RouteContext, History],
-
-    componentWillMount() {
-        historyActions.history(this.history);
-        this.history.listen(this.updatehistory);
-    },
+    mixins: [PureRenderMixin, RouteContext],
 
     componentDidMount() {
         ipcRenderer.send('app:startup', new Date().getTime());
-    },
-    updatehistory() {
-        historyActions.history(this.history);
     },
     render() {
         return (
