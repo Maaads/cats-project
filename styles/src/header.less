@@ -1,0 +1,45 @@
+.header{
+    -webkit-app-region: drag;
+    position: absolute;
+    height: 30px;
+    width: 100vw;
+    top: 0;
+    background-color: rgba(0,0,0,0.08);
+}
+
+.header h1 {
+	position: absolute;
+	width: 100vw;
+	font-size: 15px;
+	text-align: center;
+	margin-top: 7px;
+	font-weight: 400;
+	color: rgba(55, 55, 55, 0.75);
+}
+
+
+.header.win32 div {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    float: right;
+    width: 25px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 1px;
+}
+
+.header.win32 .minimize i{
+    bottom: 2px;
+}
+
+.header.win32 .maximize.off i{
+    font-size: 20px;
+    margin-left: 2px;
+    bottom: 7px;
+}
+
+.header.win32 i{
+    color: #373737;
+    font-size: 22px;
+    position: absolute;
+}
